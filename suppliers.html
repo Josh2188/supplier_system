@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>供應商資料管理系統｜供應商清單</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">供應商系統</div>
+      <nav>
+        <a href="suppliers.html" class="active">供應商清單</a>
+        <a href="supplier-form.html">新增供應商</a>
+        <a href="#" id="logoutBtn">登出</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>供應商清單</h1>
+          <p>管理供應商基本資料、聯絡資訊與合作狀態</p>
+        </div>
+        <a href="supplier-form.html" class="btn btn-primary">+ 新增供應商</a>
+      </header>
+
+      <section class="card filter-card">
+        <div class="filter-grid">
+          <div class="form-group">
+            <label for="searchInput">關鍵字搜尋</label>
+            <input type="text" id="searchInput" placeholder="可搜尋供應商名稱、聯絡人、統編" />
+          </div>
+
+          <div class="form-group">
+            <label for="statusFilter">合作狀態</label>
+            <select id="statusFilter">
+              <option value="">全部</option>
+              <option value="合作中">合作中</option>
+              <option value="審核中">審核中</option>
+              <option value="停用">停用</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>供應商名稱</th>
+                <th>統一編號</th>
+                <th>聯絡人</th>
+                <th>電話</th>
+                <th>Email</th>
+                <th>合作狀態</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="supplierTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
