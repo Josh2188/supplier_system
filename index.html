@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>供應商資料管理系統｜登入</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="brand-block">
+        <h1>供應商資料管理系統</h1>
+        <p>Supplier Information Management System</p>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="account">帳號</label>
+          <input type="text" id="account" placeholder="請輸入帳號" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">密碼</label>
+          <input type="password" id="password" placeholder="請輸入密碼" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">登入系統</button>
+      </form>
+
+      <div class="login-note">
+        <small>展示版前端：目前未串接後端驗證</small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "suppliers.html";
+    });
+  </script>
+</body>
+</html>
